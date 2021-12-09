@@ -12,7 +12,7 @@ ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
 RUN npm run build
 
 # Stage 2
-FROM nginx:1.17.0-alpine
+FROM nginx:1.21.4
 
 COPY --from=build-stage /react-jwt-auth/build /usr/share/nginx/html
 EXPOSE $REACT_DOCKER_PORT
